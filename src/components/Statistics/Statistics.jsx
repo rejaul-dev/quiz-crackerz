@@ -1,13 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { quizContext } from "../Root/Root";
+
 
 const Statistics = () => {
   const topics = useContext(quizContext);
 
+  
+
   return (
-    <div className="bg-white p-20">
-      <h1>This a chart</h1>
-      
+    <div>
+      <h1>this is chart</h1>
     </div>
   );
 };

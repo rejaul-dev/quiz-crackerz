@@ -1,21 +1,31 @@
-import React, { useState } from "react";
 import { toast } from "react-toastify";
+import { EyeIcon } from "@heroicons/react/24/solid";
 
 const QuizDetails = ({ quizDetail }) => {
   const { id, question, correctAnswer, options } = quizDetail;
 
-  const [open, setOpen] = useState(true);
+  const handleEyeButton = (id) => {
+    if (id === correctAnswer) {
+      toast.success(correctAnswer, { autoClose: 500 });
+    }
+  };
+
   const handleAnswer = (event) => {
     if (event === correctAnswer) {
-      toast.success("Your answer is correct",{autoClose: 500} );
+      toast.success("Your answer is correct", { autoClose: 500 });
     } else {
-      toast.warning("Your answer is wrong",{autoClose: 500});
+      toast.warning("Your answer is wrong", { autoClose: 500 });
     }
   };
 
   return (
     <section>
       <div className="md:w-3/5 w-5/6  mx-auto p-10 bg-secondary m-10 rounded-md ">
+        <EyeIcon
+          onClick={() => handleEyeButton(correctAnswer)}
+          className="h-6 w-6 text-white mb-4"
+        />
+
         <h1 className="text-xl font-bold">
           {question.replace(/(<([^>]+)>)/gi, "")}
         </h1>
