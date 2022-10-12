@@ -4,12 +4,12 @@ import { toast } from "react-toastify";
 const QuizDetails = ({ quizDetail }) => {
   const { id, question, correctAnswer, options } = quizDetail;
 
-  const[open, setOpen]=useState(true)
+  const [open, setOpen] = useState(true);
   const handleAnswer = (event) => {
-    if(event=== correctAnswer){
-      toast.success('correct')
-    }else{
-      toast.warning('wrong')
+    if (event === correctAnswer) {
+      toast.success("Your answer is correct",{autoClose: 500} );
+    } else {
+      toast.warning("Your answer is wrong",{autoClose: 500});
     }
   };
 
@@ -19,13 +19,13 @@ const QuizDetails = ({ quizDetail }) => {
         <h1 className="text-xl font-bold">
           {question.replace(/(<([^>]+)>)/gi, "")}
         </h1>
-        {options.map((option, idx) =>  ( 
+        {options.map((option) => (
           <label className="bg-primary p-2 rounded-md mb-10 ">
             <input
-              onClick={()=>handleAnswer(option)}
+              onClick={() => handleAnswer(option)}
               className="mt-7 mr-2 "
               type="radio"
-              value=''
+              value=""
               name={id}
             />
             {option}
