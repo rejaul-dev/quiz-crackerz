@@ -5,8 +5,9 @@ const Navbar = () => {
   return (
     <div>
       <header className="p-4 bg-base-100">
-        <div className="container flex justify-between h-16 mx-auto">
-          <Link to='/'
+        <div className="container flex justify-between h-16 md:px-20 mx-auto">
+          <Link
+            to="/"
             rel="noopener noreferrer"
             href="/"
             aria-label="Back to homepage"
@@ -24,37 +25,31 @@ const Navbar = () => {
           </Link>
           <ul className="items-stretch hidden space-x-3 md:flex">
             <li className="flex">
-              <Link
+              <Link to='/collections'
                 rel="noopener noreferrer"
                 href="#"
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
+                className="flex items-center px-4 -mb-1"
               >
                 Collections
               </Link>
             </li>
+
             <li className="flex">
-              <Link to='/topics'
+              <Link
+                to="/statistics"
                 rel="noopener noreferrer"
                 href="#"
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
-              >
-                Topic
-              </Link>
-            </li>
-            <li className="flex">
-              <Link to='/statistics'
-                rel="noopener noreferrer"
-                href="#"
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
+                className="flex items-center px-4 -mb-1 "
               >
                 Statistics
               </Link>
             </li>
             <li className="flex">
-              <Link to='/blog'
+              <Link
+                to="/blog"
                 rel="noopener noreferrer"
                 href="#"
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
+                className="flex items-center px-4 -mb-1"
               >
                 Blog
               </Link>

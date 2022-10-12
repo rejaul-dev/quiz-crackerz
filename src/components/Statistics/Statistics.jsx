@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useContext } from "react";
+import Chart from "../Chart/Chart";
+import { quizContext } from "../Root/Root";
 
 const Statistics = () => {
-    return (
-        <div>
-            <h1>this is statistics page</h1>
-        </div>
-    );
+    const topics = useContext(quizContext);
+  return (
+    <div>
+        <h1>This a chart</h1>
+      {
+        topics.map(topic=><Chart key={topic.id} topic={topic}/>)
+      }
+    </div>
+  );
 };
 
 export default Statistics;
