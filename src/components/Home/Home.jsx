@@ -3,8 +3,8 @@ import Cards from "../Card/Cards";
 import { quizContext } from "../Root/Root";
 
 const Home = () => {
-const topics = useContext(quizContext)
-// console.log(topics)
+  const topics = useContext(quizContext);
+  // console.log(topics)
   return (
     <section>
       <div className="p-5 mx-auto sm:p-10 md:p-16 bg-primary">
@@ -25,16 +25,19 @@ const topics = useContext(quizContext)
               </a>
             </div>
             <div className="dark:text-gray-100">
-              <p>Explore individual language collections or browse through collections about specific topics and programming concepts.</p>
+              <p>
+                Explore individual language collections or browse through
+                collections about specific topics and programming concepts.
+              </p>
             </div>
           </div>
         </div>
       </div>
-     <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-20 mb-20 w-3/4 mx-auto">
-     {
-        topics.map(topic=><Cards key={topic.id} topic={topic}/>)
-      }
-     </div>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-20 mb-20 w-3/4 mx-auto">
+        {topics.map((topic) => (
+          <Cards key={topic.id} topic={topic} />
+        ))}
+      </div>
     </section>
   );
 };

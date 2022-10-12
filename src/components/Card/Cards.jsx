@@ -4,10 +4,6 @@ import { Link } from "react-router-dom";
 const Cards = ({ topic }) => {
   const { id, name, logo, total } = topic;
 
-//   const handlePracticeButton = (id) => {
-//     console.log("Clicked");
-//   };
-
   return (
     <section>
       <div className="max-w-xs rounded-lg  shadow-md bg-secondary">
@@ -22,12 +18,12 @@ const Cards = ({ topic }) => {
             <p className="dark:text-gray-100">Total Quiz:{total}</p>
           </div>
           <Link to={`/cards/${id}`}>
-          <button
-            type="button"
-            className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-success"
-          >
-            Start Practice
-          </button>
+            <button
+              type="button"
+              className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-success"
+            >
+              Start Practice
+            </button>
           </Link>
         </div>
       </div>
