@@ -1,38 +1,38 @@
 import React from "react";
 
 const QuizDetails = ({ quizDetail }) => {
-  // console.log(quizDetail);
   const { id, question, correctAnswer, options } = quizDetail;
+
+  const handleAnswer=()=>{
+    if(options===correctAnswer){
+      alert('correct')
+    }else{
+      alert('wrong')
+    }
+  }
+
+  
   return (
     <section>
-      <div className="md:w-3/5 w-5/6 mx-auto p-10 bg-secondary m-10 rounded-md">
-        <div className="">
-          <span>
-            <h1 className="text-lg font-bold mb-4">{question.replace( /(<([^>]+)>)/ig, '')}</h1>
-          </span>
-
-          <div className="bg-primary flex p-4 rounded-md mb-4">
-            <input className="mr-4" type="radio" name={id} id='' />
-            <p>{options[0]}</p>
-          </div>
-
-          <div className="bg-primary flex p-4 rounded-md mb-4">
-            <input className="mr-4" type="radio" name={id} id="" />
-            <p>{options[1]}</p>
-          </div>
-
-          <div className="bg-primary flex p-4 rounded-md mb-4">
-            <input className="mr-4" type="radio" name={id} id="" />
-            <p>{options[2]}</p>
-          </div>
-
-          <div className="bg-primary flex p-4 rounded-md mb-4">
-            <input className="mr-4" type="radio" name={id} id="" />
-            <p>{options[3]}</p>
-          </div>
-        </div>
-      </div>
+      <div className="md:w-3/5 w-5/6  mx-auto p-10 bg-secondary m-10 rounded-md ">
+        <h1 className="text-xl font-bold">
+          {question.replace(/(<([^>]+)>)/gi, "")}
+        </h1>
+        {options.map((option) => (
+          <label className="bg-primary p-2 rounded-md mb-10 ">
+            <input
+            onClick={()=>handleAnswer()}
+              className="mt-7 mr-2 "
+              type="radio"
+              value={correctAnswer}
+              name={id}
+            />
+            {option}
+            <br />
+          </label>
+        ))}
       
+      </div>
     </section>
   );
 };
