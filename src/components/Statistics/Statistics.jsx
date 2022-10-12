@@ -1,11 +1,8 @@
-import React, { useContext, useState } from "react";
 import { quizContext } from "../Root/Root";
 
 
 const Statistics = () => {
-  const topics = useContext(quizContext);
-
-  
+  // const topics = useContext(quizContext);
 
   return (
     <div>

@@ -26,14 +26,16 @@ const QuizDetails = ({ quizDetail }) => {
           className="h-6 w-6 text-white mb-4"
         />
 
-        <h1 className="text-xl font-bold">
+        <h1 className="text-xl font-bold m-4 p-1">
           {question.replace(/(<([^>]+)>)/gi, "")}
         </h1>
+        
         {options.map((option) => (
-          <label className="bg-primary p-2 rounded-md mb-10 ">
+          <div className="bg-primary m-4 p-4 rounded-md  ">
+            <label className=" cursor-pointer">
             <input
               onClick={() => handleAnswer(option)}
-              className="mt-7 mr-2 "
+              className="mr-2 "
               type="radio"
               value=""
               name={id}
@@ -41,8 +43,9 @@ const QuizDetails = ({ quizDetail }) => {
             {option}
             <br />
           </label>
+          </div>
         ))}
-      </div>
+        </div>
     </section>
   );
 };
